@@ -113,7 +113,7 @@ let bugEmbed = new Discord.RichEmbed()
 .setColor("#FFF000");
 let suggestionChannel = message.guild.channels.find(c => c.name === "logs");
 
-suggestionChannel.send(bugEmbed).then(message => {
+suggestionChannel.sendEmbed(bugEmbed).then(message => {
 	message.react("👍") 
 	message.react("👎")
 });
