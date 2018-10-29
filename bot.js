@@ -28,7 +28,7 @@ suggestionChannel.send(bugEmbed).then(message => {
 });
 message.channel.send("The suggestion was made, our developer team will look into it soon!").then(message => message.delete(100000));
 });
-}
+
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
