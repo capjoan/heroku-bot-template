@@ -111,7 +111,7 @@ let bugEmbed = new Discord.RichEmbed()
 .addField("**The suggestion is**", suggestion)
 .addField("Also want to give a suggestion?", "Use the !suggestion command, aliases: suggest")
 .setColor("#FFF000");
-let suggestionChannel = message.guild.channels.find(c => c.name === "logs");
+let suggestionChannel = message.guild.channels.find(c => c.name === "submitted-suggestion");
 
 suggestionChannel.sendEmbed(bugEmbed).then(message => {
 	message.react("👍") 
