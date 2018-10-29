@@ -13,7 +13,7 @@ client.on('ready', () => {
 
 //bot status
 
-        client.user.setActivity("watching dond`s videos!)
+        client.user.setActivity("watching dond`s videos!")
 
 //bot status end
 
