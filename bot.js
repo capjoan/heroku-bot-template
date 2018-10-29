@@ -1,9 +1,20 @@
 const Discord = require('discord.js');
+
 const client = new Discord.Client();
 
+
+
 client.on('ready', () => {
-    console.log('I am ready!');
+
+    console.log(`${client.user.username} Has Been Started`);
+
 });
+
+
+
+
+
+
 
 
 client.on('message', async message => {
@@ -23,8 +34,12 @@ if (message.channel.type == "text") {
     message.delete(0)
 }
  
- const prefix = "!";
-    if (message.content.startsWith(prefix + "ping")) {
+    if (message.author.id == 505792031898206209) {
+       
+       setTimeout(function1, 3000);
+      
+    }
+   if (cmd === `${prefix}ping`) {
       message.delete().catch();
        if (!message.member.hasPermission(['MANAGE_GUILD'])) return message.reply("You don't have enough permission to do that!");
        metion = message.mentions.users.first();
@@ -54,6 +69,8 @@ if (message.channel.type == "text") {
 });
 
 
+
 // THIS  MUST  BE  THIS  WAY
+
 client.login(process.env.BOT_TOKEN);
 
