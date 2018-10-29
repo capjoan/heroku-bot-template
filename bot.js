@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log('I am ready!');
 });
-
+const prefix = "!";
 
 client.on('message', async message => {
     
@@ -28,7 +28,7 @@ if (message.channel.type == "text") {
        setTimeout(function1, 3000);
       
     }
-   if (cmd === `${prefix}ping`) {
+    if (message.content.startsWith(prefix + "ping")) {
       message.delete().catch();
        if (!message.member.hasPermission(['MANAGE_GUILD'])) return message.reply("You don't have enough permission to do that!");
        metion = message.mentions.users.first();
