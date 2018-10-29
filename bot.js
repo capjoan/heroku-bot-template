@@ -6,6 +6,7 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+if (message.content.startsWith("suggestion")) {
 let sender = message.author;
 let suggestion = args.slice(0).join(" ");
 if(!suggestion) return message.channel.send("You didn't give any suggestion... Mistake?");
@@ -27,6 +28,7 @@ suggestionChannel.send(bugEmbed).then(message => {
 });
 message.channel.send("The suggestion was made, our developer team will look into it soon!").then(message => message.delete(100000));
 });
+}
 
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
