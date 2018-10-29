@@ -11,6 +11,19 @@ client.on('ready', () => {
 
 });
 
+//bot status
+    function changing_status() {
+        let status = ['under development!', 'donds videos']
+        let random = status[Math.floor(Math.random() * status.length)]
+        client.user.setActivity(random)
+      }
+      client.on("ready", () => {
+        setInterval(changing_status, 9000);
+
+      })
+//bot status end
+
+
 
 
 
