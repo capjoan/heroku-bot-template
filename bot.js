@@ -98,49 +98,27 @@ if (message.channel.type == "text") {
  
 }
         if (cmd == 'suggestion') {
-            let sender = message.author;
-let suggestion = args.slice(0).join(" ");
-if(!suggestion) return message.channel.send("You didn't give any suggestion... Mistake?");
-if(!args[2]) return message.channel.send("That suggestion is a bit short, isn't it? Try making it a little longer");
+	message.delete().catch();
+        let sender = message.author;
+	let suggestion = args.slice(0).join(" ");
+	if(!suggestion) return message.channel.send("You didn't give any suggestion... Mistake?");
+	if(!args[2]) return message.channel.send("That suggestion is a bit short, isn't it? Try making it a little longer");
 
-let bugEmbed = new Discord.RichEmbed()
-.setTitle("**A suggestion was made!**")
-.setDescription(`This suggestion was made by ${sender}`)
-.setTimestamp()
-.setAuthor(sender.tag)
-.addField("**The suggestion is**", suggestion)
-.addField("Also want to give a suggestion?", "Use the !suggestion command, aliases: suggest")
-.setColor("#FFF000");
-let suggestionChannel = message.guild.channels.find(c => c.name === "submitted-suggestion");
+	let bugEmbed = new Discord.RichEmbed()
+	.setTitle("**A suggestion was made!**")
+	.setDescription(`This suggestion was made by ${sender}`)
+	.setTimestamp()
+	.setAuthor(sender.tag)
+	.addField("**The suggestion is**", suggestion)
+	.addField("Also want to give a suggestion?", "Use the !suggestion command, aliases: suggest")
+	.setColor("#FFF000");
+	let suggestionChannel = message.guild.channels.find(c => c.name === "submitted-suggestion");
 
-suggestionChannel.sendEmbed(bugEmbed).then(message => {
-	message.react("👍") 
-	message.react("👎")
-});
-message.channel.send("The suggestion was made, our developer team will look into it soon!").then(message => message.delete(100000));
-
-            
-            
-            
-            
+	suggestionChannel.sendEmbed(bugEmbed)
+	message.channel.send("Thank you for telling us this suggestion! We will take a look and take it into consideration!").then(message => message.delete(100000));
             
         }
-         if (cmd == 'help') {
-         message.delete().catch();
-              
-       var everyonecommand = new Discord.RichEmbed()
-       .setTitle('Command List - Everyone')
-         .setDescription('Commands That Everyone Can User')
-         .addField(`${prefix}help`, `Shows list of commands`)
-       var admincommand = new Discord.RichEmbed()
-       .setTitle('Command List - Administators')
-         .setDescription('Commands That Only Administrators Can Use')
-         .addField(`${prefix}warn`, `Warns a user!`)
-        .addField(`${prefix}dm`, `Sends Private Message to users - Used For Support Tickets`)
-        message.channel.sendEmbed(everyonecommand)
-             message.channel.sendEmbed(admincommand)
-}
-        
+
          if (cmd == 'dm') {
          message.delete().catch();
       
