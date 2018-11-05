@@ -6,7 +6,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
 
-    
+    client.user.setActivity("under-development!")
     console.log(`${client.user.username} Has Been Started`);
 
 });
