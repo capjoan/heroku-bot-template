@@ -74,7 +74,7 @@ if (message.channel.type == "text") {
      if (cmd == 'warn') {
          
          message.delete().catch();
-       let reportchannel = message.guild.channels.find(c => c.name === "logging");
+       let reportchannel = message.guild.channels.find(c => c.name === "logs");
           if (!message.member.hasPermission(['KICK_MEMBERS'])) return message.channel.sendEmbed(permdenyEmbed);
          let mUser = message.guild.member(message.mentions.users.first() || message.guild.member.get(args[0]));
          if(!mUser) return message.reply("Couldn't find that user!");
