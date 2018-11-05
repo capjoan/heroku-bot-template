@@ -2,11 +2,15 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-
+    function changing_status() {
+        let status = ['!help | Prefix: !', 'under development!', 'utbot.wadj.ga', 'NEW: Set log channel!', 'Alpha thing', `${client.users.size} users!`, `on ${client.guilds.size} servers`]
+        let random = status[Math.floor(Math.random() * status.length)]
+        client.user.setActivity(random)
+      }
 
 client.on('ready', () => {
 
-    client.user.setActivity("under-development!")
+  
     console.log(`${client.user.username} Has Been Started`);
 
 });
