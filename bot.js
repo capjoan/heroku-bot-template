@@ -131,6 +131,9 @@ if (message.channel.type == "text") {
          if(!mUser) return message.reply("Couldn't find that user!")
          let dmMsg = args.join(" ").slice(22);
          mUser.send(`${dmMsg}`);
+}
+
+
       if(command === "ping") {
     // Calculates ping between sending a message and editing it, giving a nice round-trip latency.
     // The second ping is an average latency between the bot and the websocket server (one-way, not round-trip)
@@ -139,11 +142,19 @@ if (message.channel.type == "text") {
   }
   
          
-         
+     if(command === "say") {
+    // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+    // To get the "message" itself we join the `args` back into a string with spaces: 
+    const sayMessage = args.join(" ");
+    // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+    message.delete().catch(O_o=>{}); 
+    // And we get the bot to say the thing: 
+    message.channel.send(sayMessage);
+  }    
       
        
  
-}
+
 }   
 }
 });
