@@ -7,7 +7,6 @@ const client = new Discord.Client();
 
 
 
-client.user.setActivity('TEST', { type: 'WATCHING' });
 
 
 
